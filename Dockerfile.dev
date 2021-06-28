@@ -1,0 +1,10 @@
+FROM node:alpine
+
+WORKDIR '/app'
+#RUN chown -R amehta:amehta /app/node_modules
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
